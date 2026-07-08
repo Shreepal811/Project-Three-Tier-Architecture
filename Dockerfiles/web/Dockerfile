@@ -10,6 +10,7 @@ ENV CATALOGUE_HOST=catalogue \
     RATINGS_HOST=ratings 
 
 COPY entrypoint.sh /root/
+RUN chmod +x /root/entrypoint.sh
     
 ENTRYPOINT [ "/root/entrypoint.sh" ]
 
