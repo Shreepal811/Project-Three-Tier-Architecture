@@ -239,7 +239,7 @@ kubectl create ns robot-shop
 # Deploy all services:
 helm install robot-shop \
   --namespace robot-shop \
-  ./helm
+  ./EKS-manifest/helm
 ```
  
 ---
@@ -253,21 +253,7 @@ kubectl get pods -n robot-shop -w
  
 All pods should show `Running` and `1/1 Ready`:
  
-```
-NAME                         READY   STATUS    RESTARTS
-cart-xxx                     1/1     Running   0  ✅
-catalogue-xxx                1/1     Running   0  ✅
-dispatch-xxx                 1/1     Running   0  ✅
-mongodb-xxx                  1/1     Running   0  ✅
-mysql-xxx                    1/1     Running   0  ✅
-payment-xxx                  1/1     Running   0  ✅
-rabbitmq-xxx                 1/1     Running   0  ✅
-ratings-xxx                  1/1     Running   0  ✅
-redis-0                      1/1     Running   0  ✅
-shipping-xxx                 1/1     Running   0  ✅
-user-xxx                     1/1     Running   0  ✅
-web-xxx                      1/1     Running   0  ✅
-```
+![All Pods Running](Screenshot/pods.png)
  
 ---
  
@@ -283,3 +269,5 @@ Copy the `EXTERNAL-IP` and open in browser:
 ```
 http://<EXTERNAL-IP>
 ```
+
+![Application Home Page](Screenshot/homepage.png)
